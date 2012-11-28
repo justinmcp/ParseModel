@@ -35,7 +35,8 @@ module ParseModel
       end
     
       def field(name)
-        @fields
+        @fields ||= []
+        @fields << name
       end
 
       def current_user
@@ -49,7 +50,6 @@ module ParseModel
       end
       
       def get_fields
-        @fields ||= []
         @fields
       end
 
